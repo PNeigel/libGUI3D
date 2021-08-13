@@ -9,8 +9,9 @@
 IF(NOT EXISTS "${gl3w_INSTALL_DIR}/src/gl3w.c")
     find_package(Git)
     SET(PYTHON_VERSION_MAJOR 3)
-    find_package(PythonInterp)
-
+    #find_package(PythonInterp)
+    find_package(Python3)
+    
     SET(NAME gl3w)
     SET(URL "https://github.com/skaslev/gl3w.git")
 
@@ -23,7 +24,7 @@ IF(NOT EXISTS "${gl3w_INSTALL_DIR}/src/gl3w.c")
             WORKING_DIRECTORY ${${NAME}_INSTALL_PREFIX}
     )
     execute_process(
-            COMMAND python3 gl3w_gen.py --root=${${NAME}_INSTALL_DIR}
+            COMMAND ${Python3_EXECUTABLE} gl3w_gen.py --root=${${NAME}_INSTALL_DIR}
             WORKING_DIRECTORY ${${NAME}_INSTALL_PREFIX}/${NAME}
     )
 

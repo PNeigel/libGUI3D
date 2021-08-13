@@ -31,7 +31,7 @@ SET(${NAME}_DOWNLOADED 0)
           WORKING_DIRECTORY ${${NAME}_INSTALL_DIR}/build
   )
   execute_process(
-          COMMAND make install
+          COMMAND cmake --build . --target INSTALL --config Release
           WORKING_DIRECTORY ${${NAME}_INSTALL_DIR}/build
   )
   SET(${NAME}_DOWNLOADED 1 CACHE STRING " ")
