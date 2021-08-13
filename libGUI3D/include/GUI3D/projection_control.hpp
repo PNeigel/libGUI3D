@@ -1,6 +1,9 @@
 #pragma once
 
 #include <glm/glm.hpp>
+
+#undef near
+#undef far
 namespace SC {
 
     class ProjectionControl {

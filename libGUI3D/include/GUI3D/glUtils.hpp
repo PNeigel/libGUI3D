@@ -22,6 +22,8 @@
 #include "glShader.hpp"
 #include "glMesh.hpp"
 
+typedef unsigned int uint;
+
 namespace glUtil {
 
     template<class T>
@@ -195,4 +197,4 @@ namespace glUtil {
 
 }
 
-#endif /* glUtils_hpp */
+#endif // glUtils_hpp

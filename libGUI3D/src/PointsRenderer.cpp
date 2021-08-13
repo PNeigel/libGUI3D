@@ -5,6 +5,8 @@
 
 using namespace PSLAM;
 
+typedef unsigned int uint;
+
 PointRenderer::PointRenderer():mBufferSize(1e6),mPointSize(0),mbBufferInited(false){
     InitShader();
 }
