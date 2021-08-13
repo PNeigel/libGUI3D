@@ -77,6 +77,7 @@ if (NOT TARGET imgui)
             )
     #message("gl3w_INCLUDE_DIRS: " ${gl3w_INCLUDE_DIRS})
     target_include_directories(imgui
+            PUBLIC ${GLFW_INCLUDE_DIR}
             PUBLIC ${gl3w_INCLUDE_DIRS}
             PUBLIC ${ImGUI_INSTALL_DIR}
             PUBLIC ${ImGUI_INSTALL_DIR}/backends/
