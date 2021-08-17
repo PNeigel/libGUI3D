@@ -42,6 +42,8 @@ using namespace gl;
 #include <Eigen/Geometry>
 #endif
 
+typedef unsigned int uint;
+
 namespace detail{
     template <typename T> struct type_traits;
     template <> struct type_traits<uint32_t> { enum { type = GL_UNSIGNED_INT, integral = 1 }; };

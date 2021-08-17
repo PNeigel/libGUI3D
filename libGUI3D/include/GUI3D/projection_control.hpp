@@ -28,8 +28,8 @@ namespace SC {
 
         float fovy;
         bool bShowUI;
-        float near;
-        float far;
+        float nnear;
+        float ffar;
     private:
         unsigned int width_, height_;
         int projection_mode;

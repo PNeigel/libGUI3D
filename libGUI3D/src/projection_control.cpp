@@ -13,8 +13,8 @@ ProjectionControl::ProjectionControl(unsigned int windowWidth, unsigned int wind
 :
 fovy(45.0f),
 bShowUI(false),
-near(0.001f),
-far(50.0f),
+nnear(0.001f),
+ffar(50.0f),
 width_(windowWidth),height_(windowHeight),
 projection_mode(0),
 width(10.0f)
@@ -50,9 +50,9 @@ glm::mat4 ProjectionControl::projection_matrix() const {
     if(projection_mode == 0) {
         proj = glm::perspective<float>(glm::radians(fovy),
                                        (float) width_ /
-                                       (float) height_, near, far);
+                                       (float) height_, nnear, ffar);
     } else {
-        proj = glm::ortho<float>(-width/2.f,width/2.f,-width/2.f/aspect_ratio, width/2.f/aspect_ratio, near,far);
+        proj = glm::ortho<float>(-width/2.f,width/2.f,-width/2.f/aspect_ratio, width/2.f/aspect_ratio, nnear,ffar);
     }
     return proj;
 //  return Eigen::Map<Eigen::Matrix4f>(glm::value_ptr(proj));
@@ -76,8 +76,8 @@ void ProjectionControl::draw_ui() {
     ImGui::DragFloat("Width", &width, 0.1f, 1.0f, 1000.0f);
   }
 
-  ImGui::DragFloat("Near", &near, 1.0f, 0.1f, far);
-  ImGui::DragFloat("Far", &far, 1.0f, near, 10000.0f);
+  ImGui::DragFloat("Near", &nnear, 1.0f, 0.1f, ffar);
+  ImGui::DragFloat("Far", &ffar, 1.0f, nnear, 10000.0f);
 
   ImGui::End();
 }
